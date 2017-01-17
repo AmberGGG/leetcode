@@ -1,4 +1,3 @@
-package cs61b;
 /*
 @Copyright:LintCode
 @Author:   Jieyao Gao
