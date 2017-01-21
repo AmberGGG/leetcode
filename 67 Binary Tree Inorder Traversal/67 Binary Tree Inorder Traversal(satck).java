@@ -8,15 +8,18 @@ public class Solution {
         if (root == null){
             return result;
         }
-        traverse(root, result);
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        while (!stack.empty() || root != null){
+            if (root != null){
+                stack.push(root);
+                root = root.left;
+            } else {
+                root = stack.pop();
+                result.add(root.val);
+                root = root.right;
+            }
+        }
         return result;
     }
-    public void traverse(TreeNode root, ArrayList<Integer> result){
-        if (root == null){
-            return;
-        }
-        traverse(root.left, result);
-        result.add(root.val);
-        traverse(root.right, result);
-    }
+    
 }
