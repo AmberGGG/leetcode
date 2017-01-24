@@ -1,0 +1,17 @@
+public class Solution {
+    /**
+     * @param root: a TreeNode, the root of the binary tree
+     * @return: nothing
+     */
+    public void invertBinaryTree(TreeNode root) {
+        if (root == null){
+            return;
+        }
+        invertBinaryTree(root.left);
+        invertBinaryTree(root.right);
+        TreeNode node = root.left;
+        root.left = root.right;
+        root.right = node;
+        
+    }
+}
